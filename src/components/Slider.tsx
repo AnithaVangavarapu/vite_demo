@@ -27,30 +27,41 @@ const Slider = ({ slides }: SliderProps) => {
   }, [slide]);
 
   return (
-    <div className="flex items-center justify-center relative">
-      <div className="absolute">
+    <div className="relative w-full h-[400px] overflow-hidden">
+      <div
+        className={`flex absolute transition-transform duration-500 w-full ease-in-out`}
+        style={{
+          transform: `translateX(-${slide * 100}%)`,
+          width: `${slides.length * 100}%`,
+        }}
+      >
         {slides.map((itm, idx) => {
           return (
-            <img
-              src={itm.src}
-              alt={itm.alt}
-              key={idx}
-              className={`w-full h-[400px] ${slide === idx ? "" : "hidden"} `}
-            />
+            <div key={idx} className="w-full flex-shrink-0">
+              <img
+                src={itm.src}
+                alt={itm.alt}
+                key={idx}
+                style={{ width: "35%" }}
+              />
+            </div>
           );
         })}
       </div>
-      <div className="absolute flex justify-between">
+
+      <div className="absolute left-4 top-1/2">
         <CircleArrowLeft
           onClick={prevSlide}
-          className={`cursor-pointer w-10 h-10 left-4 text-white`}
-        />
-        <CircleArrowRight
-          onClick={nextSlide}
-          className={`cursor-pointer w-10 h-10  right-4 text-white`}
+          className={`cursor-pointer  w-10 h-10  text-white`}
         />
       </div>
-      <div className="absolute flex items-center top-[400px]">
+      <div className="absolute right-4 top-1/2">
+        <CircleArrowRight
+          onClick={nextSlide}
+          className={`cursor-pointer w-10 h-10 text-white`}
+        />
+      </div>
+      <div className="absolute flex items-center bottom-4 left-1/2">
         {slides.map((_, idx) => {
           return (
             <div>
