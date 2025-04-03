@@ -21,18 +21,18 @@ const Slider = ({ slides }: SliderProps) => {
   const nextSlide = () => {
     slide === slides.length - 1 ? setSlide(0) : setSlide(slide + 1);
   };
-  useEffect(() => {
-    const slideInterval = setInterval(() => nextSlide(), 5000);
-    return () => clearInterval(slideInterval);
-  }, [slide]);
+
+  // useEffect(() => {
+  //   const slideInterval = setInterval(() => nextSlide(), 5000);
+  //   return () => clearInterval(slideInterval);
+  // }, [slide]);
 
   return (
-    <div className="relative w-full h-[400px] overflow-hidden">
+    <div className="relative overflow-hidden ">
       <div
-        className={`flex absolute transition-transform duration-500 w-full ease-in-out`}
+        className={`flex  transition-transform duration-500`}
         style={{
           transform: `translateX(-${slide * 100}%)`,
-          width: `${slides.length * 100}%`,
         }}
       >
         {slides.map((itm, idx) => {
@@ -42,7 +42,7 @@ const Slider = ({ slides }: SliderProps) => {
                 src={itm.src}
                 alt={itm.alt}
                 key={idx}
-                style={{ width: "35%" }}
+                style={{ width: "100%", height: "600px" }}
               />
             </div>
           );

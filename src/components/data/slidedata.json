@@ -1,7 +1,7 @@
 {
   "slides": [
-    { "src": "https://picsum.photos/seed/img1/300/200", "alt": "img1" },
-    { "src": "https://picsum.photos/seed/img2/300/200", "alt": "img2" },
-    { "src": "https://picsum.photos/seed/img3/300/200", "alt": "img3" }
+    { "src": "src/components/images/img1.jpg", "alt": "imag1" },
+    { "src": "src/components/images/img3.jpg", "alt": "imag3" },
+    { "src": "src/components/images/img2.jpeg", "alt": "imag2" }
   ]
 }
