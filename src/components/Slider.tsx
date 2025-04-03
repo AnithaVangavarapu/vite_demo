@@ -22,10 +22,10 @@ const Slider = ({ slides }: SliderProps) => {
     slide === slides.length - 1 ? setSlide(0) : setSlide(slide + 1);
   };
 
-  // useEffect(() => {
-  //   const slideInterval = setInterval(() => nextSlide(), 5000);
-  //   return () => clearInterval(slideInterval);
-  // }, [slide]);
+  useEffect(() => {
+    const slideInterval = setInterval(() => nextSlide(), 5000);
+    return () => clearInterval(slideInterval);
+  }, [slide]);
 
   return (
     <div className="relative overflow-hidden ">
