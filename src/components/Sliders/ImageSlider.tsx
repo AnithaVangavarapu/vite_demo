@@ -12,7 +12,7 @@ type option = {
 interface SliderProps {
   slides: option[];
 }
-const Slider = ({ slides }: SliderProps) => {
+const ImageSlider = ({ slides }: SliderProps) => {
   const [slide, setSlide] = useState(0);
 
   const prevSlide = () => {
@@ -86,4 +86,4 @@ const Slider = ({ slides }: SliderProps) => {
   );
 };
 
-export default Slider;
+export default ImageSlider;
