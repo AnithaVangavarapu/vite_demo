@@ -10,22 +10,7 @@ const Slider = () => {
     "outstanding",
   ];
   // const values = ["1", "2", "3", "4", "5"];
-  const handlePrevious = () => {
-    if (status === 0) {
-      return;
-    } else {
-      setStatus(status - 1);
-    }
-  };
-  const handleNext = () => {
-    if (status === values.length - 1) {
-      return;
-    } else {
-      setStatus(status + 1);
-    }
-  };
-  const itemWidth = 100 / values.length;
-  console.log(itemWidth);
+
   return (
     <div className="mx-10 ">
       <div
@@ -40,6 +25,7 @@ const Slider = () => {
           <div
             key={idx}
             className={` flex justify-center items-center h-2 w-fit `}
+            onClick={() => setStatus(idx)}
           >
             <Circle
               fill={status === idx || idx <= status ? "#3b82f6" : "white"}
@@ -56,20 +42,6 @@ const Slider = () => {
             {value}
           </div>
         ))}
-      </div>
-      <div className="flex justify-center">
-        <button
-          className="border rounded-md px-1 bg-blue-500 text-white mt-2 mx-4"
-          onClick={handlePrevious}
-        >
-          Prev
-        </button>
-        <button
-          className="border rounded-md px-1 bg-blue-500 text-white mt-2"
-          onClick={handleNext}
-        >
-          Next
-        </button>
       </div>
     </div>
   );
