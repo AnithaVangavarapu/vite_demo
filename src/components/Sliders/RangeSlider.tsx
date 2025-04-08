@@ -1,10 +1,10 @@
 import { useState } from "react";
-// import styles from "./rangeSlider.module.css";
+import "./rangeSlider.css";
 import Range from "rc-slider";
 import "rc-slider/assets/index.css";
 
 function RangeSlide() {
-  const [values, setValues] = useState<number | number[]>([1, 5]);
+  const [values, setValues] = useState<number[]>([1, 5]);
 
   console.log("values", values);
   const marks = {
@@ -40,7 +40,10 @@ function RangeSlide() {
     },
   };
   return (
-    <div className="w-[70%] mx-5">
+    <div className=" m-10 ">
+      <div>
+        ValueRange: {values[0]}-{values[1]}
+      </div>
       <Range
         value={values}
         min={1}
@@ -50,9 +53,8 @@ function RangeSlide() {
         marks={marks}
         onChange={(val) => {
           console.log(val);
-          setValues(val);
+          setValues(val as number[]);
         }}
-        // className={`${styles.rcSliderHandle}`}
       />
     </div>
   );
