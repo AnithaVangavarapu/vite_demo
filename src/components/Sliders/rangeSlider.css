@@ -25,3 +25,7 @@
 .rc-slider-dot-active {
   border-color: rgb(228, 88, 88) !important;
 }
+.rc-slider-mark-text {
+  font-size: 30px !important;
+  /* top: -30px !important; */
+}
